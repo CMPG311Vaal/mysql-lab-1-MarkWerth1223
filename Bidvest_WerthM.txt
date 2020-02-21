@@ -489,19 +489,6 @@ Empty set (0.00 sec)
 mysql> Select Acount_Number AND balance FROM CustomerAcount WHERE branch_name = "Newton" AND "Balance" > 600;
 Empty set, 1 warning (0.00 sec)
 
-mysql> Select branch_name AND assets FROM BankBranch;
-+------------------------+
-| branch_name AND assets |
-+------------------------+
-|                      0 |
-|                      0 |
-|                      0 |
-|                      0 |
-|                      0 |
-|                      0 |
-|                      0 |
-+------------------------+
-7 rows in set, 7 warnings (0.00 sec)
 
 mysql> SELECT  branch_name, assets FROM BankBranch;
 +-------------+---------+
