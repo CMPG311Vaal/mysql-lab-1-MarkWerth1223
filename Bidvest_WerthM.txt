@@ -1,0 +1,520 @@
+mysql> create database BidvestBank;
+ERROR 1007 (HY000): Can't create database 'bidvestbank'; database exists
+mysql> CREATE DATABASE BidvestBank;
+ERROR 1007 (HY000): Can't create database 'bidvestbank'; database exists
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| bidvestbank        |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use bidvestbank
+Database changed
+mysql> create table CustomerAcount(
+    -> Acount_Number char(6) not null primary key,
+    -> branch_Name varchar(10),
+    -> balance double
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> create table BankBranch(
+    -> branch-name not null primary key,
+    -> branch-city varchar(20),
+    -> assets varchar(10)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-name not null primary key,
+branch-city varchar(20),
+assets varchar(10)
+)' at line 2
+mysql> create table BankBranch(
+    -> branch-name varchar(20) not null primary key,
+    -> branch-city varchar(20),
+    -> balance double
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-name varchar(20) not null primary key,
+branch-city varchar(20),
+balance double
+' at line 2
+mysql> create table CustomerAcount(
+    -> branch-name varchar(20) not null primary key,
+    -> branch-city varchar(20) not null,
+    -> balance double
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-name varchar(20) not null primary key,
+branch-city varchar(20) not null,
+balanc' at line 2
+mysql> create table BankBranch(
+    -> branch-name varchar(20) not null primary key,
+    -> branch-city varchar(20) not nill,
+    -> balance double
+    -> ),
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-name varchar(20) not null primary key,
+branch-city varchar(20) not nill,
+balanc' at line 2
+mysql> create table BankBranch(
+    -> branch-name varchar(20) not null primary key,
+    -> branch-city varchar(20) not nill,
+    -> balance double not null
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-name varchar(20) not null primary key,
+branch-city varchar(20) not nill,
+balanc' at line 2
+mysql> create table BankBranch(
+    -> branch-name varchar(20) not null primary key,
+    -> branch-city varchar(20) not null,
+    -> balance double
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-name varchar(20) not null primary key,
+branch-city varchar(20) not null,
+balanc' at line 2
+mysql> create table Customer(
+    -> customer-name varchar(20) not null primary key,
+    -> customer-street varchar(20) not null,
+    -> customer-city varchar(20)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-name varchar(20) not null primary key,
+customer-street varchar(20) not null,
+cu' at line 2
+mysql> create table Customer(
+    -> customer_name varchar(20) not null primary key,
+    -> customer_street varchar(20) not null,
+    -> customer-city varchar(20)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-city varchar(20)
+)' at line 4
+mysql> create table Customer(
+    -> customer_name varchar(20) not null primary key,
+    -> customer_street varchar(20) not null,
+    -> customer_city varchar(20)
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> create table BankBranch(
+    -> bank_branch varchar(20) not null primary key,
+    -> branch_city varchar(20),
+    -> assets bouble not null
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'bouble not null
+)' at line 4
+mysql> create table BankBranch(
+    -> branch_name varchar(20) not null primary key,
+    -> branch_city varchar(20),
+    -> assets bouble not null
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'bouble not null
+)' at line 4
+mysql> create table BankBranch(
+    -> branch_name varchar(20) not null primary key,
+    -> branch_city varchar(20),
+    -> assets double not null
+    -> );
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> create table loan (
+    -> loan_number char(10) not null primary key,
+    -> branch-name varchar(20),
+    -> amount double not null
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-name varchar(20),
+amount double not null
+)' at line 3
+mysql> create table loan (
+    -> loan_number char(10) not null primary key,
+    -> branch_name varchar(20),
+    -> amount double not null
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> create table deposit(
+    -> customer_name varchar(20) not null primary key,
+    -> account_number char(10) not null
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> create table borrower(
+    -> customer_name varchar(20)not null primary key,
+    -> loan_number char(10)
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> createtable employee(
+    -> employee_name varchar(20) not null primary key,
+    -> branch_name varchar(20) not null,
+    -> salary double noy null
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'createtable employee(
+employee_name varchar(20) not null primary key,
+branch_nam' at line 1
+mysql> create table employee(
+    -> employee_name varchar(20) not null primary key,
+    -> branch_name varchar(20) not null,
+    -> salary double noy null
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'noy null
+)' at line 4
+mysql> create table employee(
+    -> employee_name varchar(20) not null primary key,
+    -> branch_name varchar(20) not null,
+    -> salary double not null
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> insert into CustomerAcount values('A_5324','Newtown',500);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into CustomerAcount values('A_5624','Sunnyside',400);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into CustomerAcount values('A_7794',Midrand',900);
+    '>
+    '> ';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '',900);
+
+'' at line 1
+mysql> insert into CustomerAcount values('A_7794','Midrand',900);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into CustomerAcount values('A_4467','Mabopane',700);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into CustomerAcount values('A_3645','Midrand',750);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into BankBranch vlues('Midrand','Johannesburg',7100000);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'vlues('Midrand','Johannesburg',7100000)' at line 1
+mysql> insert into BankBranch values('Midrand','Johannesburg',7100000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch
+    ->
+    ->
+    -> ';
+    '>
+    '> ';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '';
+
+'' at line 4
+mysql> insert into BankBranch values('Midrand','Johannesburg',7100000);
+ERROR 1062 (23000): Duplicate entry 'Midrand' for key 'bankbranch.PRIMARY'
+mysql> insert into BankBranch values('Newtown','Johannesburg',9000000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into BankBranch values('Mabopane','Pretoria',40000);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into BankBranch values('Belgravia','Kimberly',3700000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into BankBranch values('Sunnyside','Pretoria',1700000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into BankBranch values('Amanzamtoti','Durban',3000000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into BankBranch values(Universitas',Bloemfontein',2100000);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '',Bloemfontein',2100000)' at line 1
+mysql> insert into BankBranch values('Universitas',Bloemfontein',2100000);
+    '> insert into BankBranch values('Mamelodi','Pretoria',8000000);
+    '> ;'
+    -> ';
+    '> ';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '',2100000);
+insert into BankBranch values('Mamelodi','Pretoria',8000000);
+;'
+';
+' at line 1
+mysql> insert into BankBranch values('Mamelodi','Pretoria',8000000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Customer values('Modise','Spring','Spring','George');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> insert into Customer values('Modise','Spring','George');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Customer values('Brooks','Senetor','Johannesburg');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Customer values('Jooste','North','Kimberly');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Customer value('Lobard','Sand Hill','Nelspruit');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Customer values('Mokwena','Walnut','Port-Elizabeth');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Customer values('Johnsons','Mmabatho','Mafikeng');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Customer values('johnson','Alma',Bloemfontein');
+    '> insert into Customer values('johnson','Alma','Bloemfontein');
+    '> ';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '');
+insert into Customer values('johnson','Alma','Bloemfontein');
+'' at line 1
+mysql> insert into Customer values('johnson','Alma','Bloemfontein');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Custom values('Zwane','main','Mafikeng');
+ERROR 1146 (42S02): Table 'bidvestbank.custom' doesn't exist
+mysql> insert into Customer values('Zwane','main','Mafikeng');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Customer values('Linndsay','Putnam','Port_
+    '>
+    '> insert into Customer values('Linndsay','Putnam','Port_Elizabeth');
+    '> ';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Linndsay','Putnam','Port_Elizabeth');
+'' at line 3
+mysql> insert into Customer values('Linndsay','Putnam','Port_Elizabeth');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Customer values('Wiliams','Nassau','Giyana');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into deposit values('Johnson','A-5624')
+    -> ';
+    '> ';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '';
+'' at line 2
+mysql> insert into deposit values('Johnson','A-5624');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into deposit values('Johnsons','A-5624');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into deposit values(Johnasons','A-7794');
+    '> ';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','A-7794');
+'' at line 1
+mysql> insert into deposit values('Johnasons','A-7794');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into deposit values('Zwane','A-3546';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> insert into deposit values('Zwane','A-3546');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into deposit values('A-3453');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> insert into deposit values('Lindsay','A-3453');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into loan values('L-11','Mamelodi',900);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into loan values('L-14),'Newtown',1500);
+    '> ';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Newtown',1500);
+'' at line 1
+mysql> insert into loan values('L-14','Newtown',1500);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into loan values('L-15','Sunnyside',1300);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into loan values('L-16','Sunnyside',1000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into loan values('L-17','Newtown',2000);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into loan values('L-93','Mabopane',500);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into borrower values('Modise','L-16');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into borrower values('Jooste','L-93');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into borrower values('Johnson','L-15');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into borrower values('Jackson','L-14');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into borrower values('Zwane','L-17');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into borrower values('williams','L-17');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into employee values('Modise','Sunnyside',1500);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into employee values('Brown','sunnyside',1300)
+    -> ';
+    '> ';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '';
+'' at line 2
+mysql> insert into employee values('Brown','sunnyside',1300);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into employee values('Gopal',Sunnyside',5300');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '',5300')' at line 1
+mysql> insert into employee values('Gopal','Sunnyside',5300');
+    '> ';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '');
+'' at line 1
+mysql> insert into employee values('Gopal','Sunnyside',5300');
+    '> insert into employee values('Gopal','Sunnyside',5300);
+    '> ';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '');
+insert into employee values('Gopal','Sunnyside',5300);
+'' at line 1
+mysql> insert into employee values('Gopal','Sunnyside',5300);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into emplyee values('Peterson',Newtown',2500);
+    '> ;'
+    -> ';
+    '> ';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '',2500);
+;'
+';
+'' at line 1
+mysql> insert into emplyee values('Peterson','Newtown',2500);
+ERROR 1146 (42S02): Table 'bidvestbank.emplyee' doesn't exist
+mysql> insert into employee values('Peterson','Newtown',2500);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into employee values('Sato','Austin',1600);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SE;ECT * FRROM CustomerAcount WHERE balance < 700;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SE' at line 1
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ECT * FRROM CustomerAcount WHERE balance < 700' at line 1
+mysql> SElECT * FRROM CustomerAcount WHERE balance < 700;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FRROM CustomerAcount WHERE balance < 700' at line 1
+mysql> SElECT * FROM CustomerAcount WHERE balance < 700;
++---------------+-------------+---------+
+| Acount_Number | branch_Name | balance |
++---------------+-------------+---------+
+| A_5324        | Newtown     |     500 |
+| A_5624        | Sunnyside   |     400 |
++---------------+-------------+---------+
+2 rows in set (0.00 sec)
+
+mysql> select * FROM customer WHERE customer_city = Johannesburg;
+ERROR 1054 (42S22): Unknown column 'Johannesburg' in 'where clause'
+mysql> select * FROM customer WHERE customer_city = "Johannesburg";
++---------------+-----------------+---------------+
+| customer_name | customer_street | customer_city |
++---------------+-----------------+---------------+
+| Brooks        | Senetor         | Johannesburg  |
++---------------+-----------------+---------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM employee WHERE salary > 1500 AND NOT branch_name = "Newtown";
++---------------+-------------+--------+
+| employee_name | branch_name | salary |
++---------------+-------------+--------+
+| Gopal         | Sunnyside   |   5300 |
+| Sato          | Austin      |   1600 |
++---------------+-------------+--------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT AVG(salary) 'average_Sal' FROM employee;
++-------------+
+| average_Sal |
++-------------+
+|        2440 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> SELET MAX(assets) FROM BankBranch;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELET MAX(assets) FROM BankBranch' at line 1
+mysql> SELECT MAX(assets) FROM BankBranch;
++-------------+
+| MAX(assets) |
++-------------+
+|     9000000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT employee_name FROM employee;
++---------------+
+| employee_name |
++---------------+
+| Brown         |
+| Gopal         |
+| Modise        |
+| Peterson      |
+| Sato          |
++---------------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT employee_name FROM employee WHERE branch_namr = "Sunnyside";
+ERROR 1054 (42S22): Unknown column 'branch_namr' in 'where clause'
+mysql> SELECT employee_name FROM employee WHERE branch_name = "Sunnyside";
++---------------+
+| employee_name |
++---------------+
+| Brown         |
+| Gopal         |
+| Modise        |
++---------------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT * FROM borrower;
++---------------+-------------+
+| customer_name | loan_number |
++---------------+-------------+
+| Jackson       | L-14        |
+| Johnson       | L-15        |
+| Jooste        | L-93        |
+| Modise        | L-16        |
+| williams      | L-17        |
+| Zwane         | L-17        |
++---------------+-------------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT account_name FROM CustomerAcount WHERE balance > 900;
+ERROR 1054 (42S22): Unknown column 'account_name' in 'field list'
+mysql> SELECT account_number FROM CustomerAcount WHERE balance > 900;
+ERROR 1054 (42S22): Unknown column 'account_number' in 'field list'
+mysql> SELECT account_Number FROM CustomerAcount WHERE balance > 900;
+ERROR 1054 (42S22): Unknown column 'account_Number' in 'field list'
+mysql> SELECT Acount_Number FROM CustomerAcount WHERE balance > 900;
+Empty set (0.00 sec)
+
+mysql> Select Acount_Number AND balance FROM CustomerAcount WHERE branch_name = "Newton" AND "Balance" > 600;
+Empty set, 1 warning (0.00 sec)
+
+mysql> Select branch_name AND assets FROM BankBranch;
++------------------------+
+| branch_name AND assets |
++------------------------+
+|                      0 |
+|                      0 |
+|                      0 |
+|                      0 |
+|                      0 |
+|                      0 |
+|                      0 |
++------------------------+
+7 rows in set, 7 warnings (0.00 sec)
+
+mysql> SELECT  branch_name, assets FROM BankBranch;
++-------------+---------+
+| branch_name | assets  |
++-------------+---------+
+| Amanzamtoti | 3000000 |
+| Belgravia   | 3700000 |
+| Mabopane    |   40000 |
+| Mamelodi    | 8000000 |
+| Midrand     | 7100000 |
+| Newtown     | 9000000 |
+| Sunnyside   | 1700000 |
++-------------+---------+
+7 rows in set (0.00 sec)
+
+mysql>
